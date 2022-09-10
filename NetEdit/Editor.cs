@@ -12,7 +12,7 @@ namespace NetEdit
     {
         private Themes themes;
         private MenuStripColorController? mainMenuColorController;
-        private MenuStripController mainMenu;
+        private MenuStripController? mainMenu;
 
         public Editor()
         {
@@ -27,6 +27,7 @@ namespace NetEdit
             themes.items["dark"].menu_disabled_backColor = Color.FromArgb(32, 32, 32);
             themes.items["dark"].menu_imageMargin = Color.FromArgb(32, 32, 32);
             themes.items["dark"].menu_dropdown_backColor = Color.FromArgb(32, 32, 32);
+            themes.items["dark"].backColor = Color.FromArgb(32, 32, 32);
 
             themes.items["dark"].menu_disabled_textColor = Color.Gray;
             themes.items["dark"].menu_dropdown_borderColor = Color.FromArgb(100, 100, 100);
