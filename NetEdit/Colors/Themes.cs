@@ -20,10 +20,8 @@ namespace NetEdit.Colors
         {
             _path = searchFolder;
 
-            //Chack if file extension contains . and remove it.
-            if (!fileExtension.Contains('.'))
-                _fileExtension = fileExtension.Remove('.');
-            else _fileExtension = fileExtension;
+            //Remove . and * from the file Extension if present.
+            _fileExtension = fileExtension.Filter('.', '*');
 
             items = new Dictionary<string, ColorScheme>();
         }
