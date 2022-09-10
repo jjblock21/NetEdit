@@ -12,7 +12,7 @@ namespace NetEdit.Colors
         public Themes(string searchFolder)
         {
             _path = searchFolder;
-            _fileExtension = ".editorTheme";
+            _fileExtension = "editorTheme";
             items = new Dictionary<string, ColorScheme>();
         }
 
@@ -39,7 +39,8 @@ namespace NetEdit.Colors
                 foreach (string file in Directory.GetFiles(_path))
                 {
                     //Split file name into name and extension.
-                    string[] name = Path.GetFileName(_path).Split('.');
+                    string[] name = Path.GetFileName(file).Split('.');
+                    Console.WriteLine(name[0] + "  " + name[name.Length - 1]);
                     //Get last entry and check file extension.
                     if (name[name.Length - 1] == _fileExtension)
                     {
