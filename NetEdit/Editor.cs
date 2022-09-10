@@ -46,9 +46,6 @@ namespace NetEdit
             Console.WriteLine(JsonConvert.SerializeObject(themes.items["dark"]));
             Console.WriteLine(JsonConvert.SerializeObject(themes.items["light"]));*/
 
-            //TODO: Comment this
-            mainMenu = new MenuStripController(menuStrip);
-
             /*foreach (KeyValuePair<string, ColorScheme> s in themes.items)
                 Console.WriteLine(s);*/ //Debug code
 
@@ -60,7 +57,10 @@ namespace NetEdit
             // Cahnge the title bar color on start
             //TODO: Change theme on startup.
             DarkBar.ChangeTitleBar(true, Handle);
+
+            // This is initialized here, or after initialize component.
             mainMenuColorController = new MenuStripColorController(menuStrip);
+            mainMenu = new MenuStripController(menuStrip);
         }
 
         private void outlinedButton1_Click(object sender, EventArgs e)
