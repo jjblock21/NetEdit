@@ -15,8 +15,4 @@
     <FrameworkReference Include="Microsoft.WindowsDesktop.App.WindowsForms" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="TabControl\" />
-  </ItemGroup>
-
 </Project>
