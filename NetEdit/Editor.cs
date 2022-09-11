@@ -1,6 +1,5 @@
 using Dodecaplex.DarkBar;
 using Dodecaplex.DarkGui;
-using Dodecaplex.DarkGui.ToolStrip;
 using Dodecaplex.DarkGui.ToolStripColors;
 using NetEdit.Colors;
 using NetEdit.ToolBar;

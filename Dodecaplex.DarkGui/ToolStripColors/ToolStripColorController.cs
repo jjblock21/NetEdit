@@ -5,12 +5,12 @@ using System.Windows.Forms;
 
 namespace Dodecaplex.DarkGui.ToolStripColors
 {
-    public class MenuStripColorController : ProfessionalColorTable
+    public class ToolStripColorController : ProfessionalColorTable
     {
         private List<ToolStrip> _menuStrip;
         private ColorScheme _lastScheme;
 
-        public MenuStripColorController(params ToolStrip[] toolStrips)
+        public ToolStripColorController(params ToolStrip[] toolStrips)
         {
             _menuStrip = new List<ToolStrip>();
             _menuStrip.AddRange(toolStrips);
