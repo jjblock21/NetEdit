@@ -1,6 +1,7 @@
 using Dodecaplex.DarkBar;
 using Dodecaplex.DarkGui;
 using Dodecaplex.DarkGui.ToolStrip;
+using Dodecaplex.DarkGui.ToolStripColors;
 using NetEdit.Colors;
 using NetEdit.ToolBar;
 using Newtonsoft.Json;
@@ -11,7 +12,7 @@ namespace NetEdit
     public partial class Editor : Form
     {
         private Themes themes;
-        private MenuStripColorController? mainMenuColorController;
+        private ToolStripColorController? mainMenuColorController;
         private MenuStripController? mainMenu;
 
         public Editor()
@@ -60,7 +61,7 @@ namespace NetEdit
             DarkBar.ChangeTitleBar(true, Handle);
 
             // This is initialized here, or after initialize component.
-            mainMenuColorController = new MenuStripColorController(menuStrip);
+            mainMenuColorController = new ToolStripColorController(menuStrip, mainToolStrip);
             mainMenu = new MenuStripController(menuStrip);
         }
 
@@ -84,6 +85,11 @@ namespace NetEdit
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }
