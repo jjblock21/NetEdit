@@ -32,6 +32,7 @@
 
 
         //Menu strip colors.
+        //The dropdown colors apply to all tool strips.
         public Color menu_dropdown_borderColor;
         public Color menu_dropdown_backColor;
 
@@ -44,6 +45,8 @@
         public Color menu_disabled_textColor;
         public Color menu_disabled_backColor;
 
+        //These are also used in all toolstrips.
+        //TODO: Somewhate globalize these.
         public Color menu_seperator;
         public Color menu_imageMargin;
 
