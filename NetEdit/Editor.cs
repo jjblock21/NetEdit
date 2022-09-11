@@ -11,8 +11,10 @@ namespace NetEdit
     public partial class Editor : Form
     {
         private Themes themes;
-        private MenuStripColorController? mainMenuColorController;
         private MenuStripController? mainMenu;
+
+        private MenuStripColorController? mainMenuColorController;
+        private ToolStripColorController? toolStripColorController;
 
         public Editor()
         {
@@ -20,7 +22,7 @@ namespace NetEdit
             themes.ScanFolder();
 
             //This was needed to update theme files.
-            /*themes.items["dark"].ctrl_hover_textColor = Color.WhiteSmoke;
+            themes.items["dark"].ctrl_hover_textColor = Color.WhiteSmoke;
 
             themes.items["dark"].menu_backColor = Color.FromArgb(32, 32, 32);
             themes.items["dark"].menu_button_backColor = Color.FromArgb(32, 32, 32);
@@ -37,15 +39,23 @@ namespace NetEdit
             themes.items["dark"].menu_seperator = Color.FromArgb(100, 100, 100);
             themes.items["dark"].menu_useCustomRenderer = true;
 
+            //TODO: Add all colors.
+            themes.items["dark"].tools_backColor = Color.FromArgb(32, 32, 32);
+            themes.items["dark"].tools_borderColor = Color.FromArgb(32, 32, 32);
+            themes.items["dark"].tools_textColor = Color.WhiteSmoke;
+
             themes.items["light"].textColor = SystemColors.ControlText;
             themes.items["light"].backColor = SystemColors.Window;
             themes.items["light"].menu_backColor = SystemColors.Control;
             themes.items["light"].menu_dropdown_backColor = SystemColors.Control;
             themes.items["light"].menu_button_backColor = SystemColors.Control;
             themes.items["light"].menu_textColor = SystemColors.ControlText;
+            themes.items["light"].tools_backColor = SystemColors.Control;
+            themes.items["light"].tools_borderColor = SystemColors.Control;
+            themes.items["light"].tools_textColor = SystemColors.ControlText;
 
             Console.WriteLine(JsonConvert.SerializeObject(themes.items["dark"]));
-            Console.WriteLine(JsonConvert.SerializeObject(themes.items["light"]));*/
+            Console.WriteLine(JsonConvert.SerializeObject(themes.items["light"]));
 
             /*foreach (KeyValuePair<string, ColorScheme> s in themes.items)
                 Console.WriteLine(s);*/ //Debug code
@@ -62,6 +72,8 @@ namespace NetEdit
             // This is initialized here, or after initialize component.
             mainMenuColorController = new MenuStripColorController(menuStrip);
             mainMenu = new MenuStripController(menuStrip);
+
+            toolStripColorController = new ToolStripColorController(mainToolStrip);
         }
 
         private void outlinedButton1_Click(object sender, EventArgs e)
