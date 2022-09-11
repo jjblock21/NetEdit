@@ -3,42 +3,34 @@ using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
-namespace Dodecaplex.DarkGui.ToolStripColors
+namespace Dodecaplex.DarkGui.ColorControllers
 {
-    public class ToolStripColorController : ProfessionalColorTable
+    public class MenuStripColorController : ColorController
     {
-        private List<ToolStrip> _menuStrip;
-        private ColorScheme _lastScheme;
+        private MenuStrip _menuStrip;
 
-        public ToolStripColorController(params ToolStrip[] toolStrips)
+        public MenuStripColorController(MenuStrip menuStrip) : base()
         {
-            _menuStrip = new List<ToolStrip>();
-            _menuStrip.AddRange(toolStrips);
-            ColorScheme.ActiveChanged += ApplyColorScheme;
-            //As long as UpdateItemsRecursive is only called _lastScheme has been updated.
-            _lastScheme = new ColorScheme();
+            _menuStrip = menuStrip;
         }
 
-        private void ApplyColorScheme()
+        protected override void ApplyColorScheme()
         {
             if (ColorScheme.active == null) return;
             //Create renderer with custom color table.
             ToolStripRenderer renderer = new ToolStripProfessionalRenderer(this);
             _lastScheme = ColorScheme.active;
-            foreach (ToolStrip menuStrip in _menuStrip)
+            if (ColorScheme.active.menu_useCustomRenderer)
             {
-                if (ColorScheme.active.menu_useCustomRenderer)
-                {
-                    menuStrip.RenderMode = ToolStripRenderMode.Professional;
-                    menuStrip.Renderer = renderer;
-                }
-                else
-                {
-                    menuStrip.RenderMode = ToolStripRenderMode.ManagerRenderMode;
-                }
-                menuStrip.BackColor = _lastScheme.menu_backColor;
-                UpdateItemsRecursive(menuStrip.Items);
+                _menuStrip.RenderMode = ToolStripRenderMode.Professional;
+                _menuStrip.Renderer = renderer;
             }
+            else
+            {
+                _menuStrip.RenderMode = ToolStripRenderMode.ManagerRenderMode;
+            }
+            _menuStrip.BackColor = _lastScheme.menu_backColor;
+            UpdateItemsRecursive(_menuStrip.Items);
         }
 
         //Update non renderer defined colors of ToolStripItems and their children recursively.
