@@ -5,6 +5,9 @@ using System.Windows.Forms;
 
 namespace Dodecaplex.DarkGui.ColorControllers
 {
+    /// <summary>
+    /// Automatically updates the menu strip if the color scheme hets updated.
+    /// </summary>
     public class MenuStripColorController : ColorController
     {
         private MenuStrip _menuStrip;

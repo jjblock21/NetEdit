@@ -17,6 +17,9 @@ namespace Dodecaplex.DarkGui.ColorControllers
             _lastScheme = new ColorScheme();
         }
 
+        /// <summary>
+        /// Gets called if the ColorScheme gets updated.
+        /// </summary>
         protected abstract void ApplyColorScheme();
     }
 }
