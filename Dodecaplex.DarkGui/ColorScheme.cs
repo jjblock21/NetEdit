@@ -59,8 +59,8 @@
         public Color tools_hover_backColor;
         public Color tools_hover_borderColor;
 
-        public Color tools_disabled_textColor;
-        public Color tools_disabled_backColor;
+        public Color tools_clicked_borderColor;
+        public Color tools_clicked_backColor;
 
 
         #region ControlProperties

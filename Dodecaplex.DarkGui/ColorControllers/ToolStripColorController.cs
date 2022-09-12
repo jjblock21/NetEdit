@@ -77,7 +77,63 @@
         {
             get { return _lastScheme.tools_borderColor; }
         }
-        //TODO: Figure out how to change button colors.
+        public override Color ButtonSelectedBorder
+        {
+            get { return _lastScheme.tools_hover_borderColor; }
+        }
+        public override Color ButtonSelectedGradientBegin
+        {
+            get { return _lastScheme.tools_hover_backColor; }
+        }
+        public override Color ButtonSelectedGradientMiddle
+        {
+            get { return _lastScheme.tools_hover_backColor; }
+        }
+        //TODO: Add Gradients to ColorScheme
+        public override Color ButtonSelectedGradientEnd
+        {
+            get { return _lastScheme.tools_hover_backColor; }
+        }
+
+        //Checked
+        public override Color ButtonCheckedHighlightBorder
+        {
+            get { return _lastScheme.tools_hover_borderColor; }
+        }
+        public override Color ButtonCheckedHighlight
+        {
+            get { return _lastScheme.tools_hover_backColor; }
+        }
+        public override Color ButtonCheckedGradientBegin
+        {
+            get { return _lastScheme.tools_hover_backColor; }
+        }
+        public override Color ButtonCheckedGradientMiddle
+        {
+            get { return _lastScheme.tools_hover_backColor; }
+        }
+        public override Color ButtonCheckedGradientEnd
+        {
+            get { return _lastScheme.tools_hover_backColor; }
+        }
+
+        //Pressed
+        public override Color ButtonPressedBorder
+        {
+            get { return _lastScheme.tools_clicked_borderColor; }
+        }
+        public override Color ButtonPressedGradientBegin
+        {
+            get { return _lastScheme.tools_clicked_backColor; }
+        }
+        public override Color ButtonPressedGradientMiddle
+        {
+            get { return _lastScheme.tools_clicked_backColor; }
+        }
+        public override Color ButtonPressedGradientEnd
+        {
+            get { return _lastScheme.tools_clicked_backColor; }
+        }
         #endregion
     }
 }
