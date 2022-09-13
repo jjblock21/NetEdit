@@ -43,6 +43,10 @@ namespace NetEdit
             themes.items["dark"].tools_backColor = Color.FromArgb(32, 32, 32);
             themes.items["dark"].tools_borderColor = Color.FromArgb(32, 32, 32);
             themes.items["dark"].tools_textColor = Color.WhiteSmoke;
+            themes.items["dark"].tools_clicked_backColor = Color.FromArgb(60, 60, 60);
+            themes.items["dark"].tools_clicked_borderColor = Color.DeepSkyBlue;
+            themes.items["dark"].tools_hover_backColor = Color.FromArgb(40, 40, 40);
+            themes.items["dark"].tools_hover_borderColor = Color.CornflowerBlue;
 
             themes.items["light"].textColor = SystemColors.ControlText;
             themes.items["light"].backColor = SystemColors.Window;

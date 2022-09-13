@@ -15,13 +15,13 @@
         protected override void ApplyColorScheme()
         {
             if (ColorScheme.active == null) return;
-            //Create renderer with custom color table.
-            ToolStripRenderer renderer = new ToolStripProfessionalRenderer(this);
             _lastScheme = ColorScheme.active;
             foreach (ToolStrip toolStrip in _toolStrips)
             {
                 if (ColorScheme.active.menu_useCustomRenderer)
                 {
+                    //Create renderer with custom color table.
+                    ToolStripRenderer renderer = new CustomToolStripRenderer(this, _lastScheme.tools_textColor);
                     toolStrip.RenderMode = ToolStripRenderMode.Professional;
                     toolStrip.Renderer = renderer;
                 }
@@ -37,17 +37,20 @@
         //Update non renderer defined colors of ToolStripItems and their children recursively.
         private void UpdateItemsRecursive(ToolStripItemCollection items)
         {
-            foreach (ToolStripMenuItem i in items.OfType<ToolStripMenuItem>())
+            foreach (ToolStripItem i in items.OfType<ToolStripItem>())
             {
                 // Go deeper if there is another dropdown.
+                i.BackColor = _lastScheme.tools_backColor;
+                i.ForeColor = _lastScheme.tools_textColor;
+            }
+            foreach (ToolStripSplitButton i in items.OfType<ToolStripSplitButton>())
+            {
                 if (i.HasDropDown)
                 {
                     i.DropDown.BackColor = _lastScheme.menu_dropdown_backColor;
-                    //Update dropdown items later.
-                    if (i.HasDropDownItems) UpdateItemsRecursive(i.DropDownItems);
+                    if (i.HasDropDownItems)
+                        UpdateItemsRecursive(i.DropDownItems);
                 }
-                i.BackColor = _lastScheme.tools_backColor;
-                i.ForeColor = _lastScheme.tools_textColor;
             }
         }
 
@@ -77,6 +80,7 @@
         {
             get { return _lastScheme.tools_borderColor; }
         }
+
         public override Color ButtonSelectedBorder
         {
             get { return _lastScheme.tools_hover_borderColor; }
@@ -133,6 +137,37 @@
         public override Color ButtonPressedGradientEnd
         {
             get { return _lastScheme.tools_clicked_backColor; }
+        }
+
+        //TODO: make these as cross used
+        //Menu dropdowns
+        public override Color MenuItemBorder
+        {
+            get { return _lastScheme.menu_hover_borderColor; }
+        }
+        public override Color MenuItemSelected
+        {
+            get { return _lastScheme.menu_hover_borderColor; }
+        }
+        public override Color MenuItemSelectedGradientBegin
+        {
+            get { return _lastScheme.menu_hover_backColor; }
+        }
+        public override Color MenuItemSelectedGradientEnd
+        {
+            get { return _lastScheme.menu_hover_backColor; }
+        }
+        public override Color MenuItemPressedGradientBegin
+        {
+            get { return _lastScheme.menu_hover_backColor; }
+        }
+        public override Color MenuItemPressedGradientMiddle
+        {
+            get { return _lastScheme.menu_hover_backColor; }
+        }
+        public override Color MenuItemPressedGradientEnd
+        {
+            get { return _lastScheme.menu_hover_backColor; }
         }
         #endregion
     }

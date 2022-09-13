@@ -53,7 +53,10 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripSplitButton();
+            this.eToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.eToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.mainToolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -273,6 +276,7 @@
             // 
             // toolStripButton3
             // 
+            this.toolStripButton3.CheckOnClick = true;
             this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -283,11 +287,34 @@
             // toolStripButton4
             // 
             this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eToolStripMenuItem,
+            this.eToolStripMenuItem1,
+            this.eToolStripMenuItem2});
             this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton4.Size = new System.Drawing.Size(32, 22);
             this.toolStripButton4.Text = "toolStripButton4";
+            // 
+            // eToolStripMenuItem
+            // 
+            this.eToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.eToolStripMenuItem.Name = "eToolStripMenuItem";
+            this.eToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eToolStripMenuItem.Text = "e";
+            // 
+            // eToolStripMenuItem1
+            // 
+            this.eToolStripMenuItem1.Name = "eToolStripMenuItem1";
+            this.eToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.eToolStripMenuItem1.Text = "e";
+            // 
+            // eToolStripMenuItem2
+            // 
+            this.eToolStripMenuItem2.Name = "eToolStripMenuItem2";
+            this.eToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.eToolStripMenuItem2.Text = "e";
             // 
             // Editor
             // 
@@ -338,6 +365,9 @@
         private ToolStripButton toolStripButton1;
         private ToolStripButton toolStripButton2;
         private ToolStripButton toolStripButton3;
-        private ToolStripButton toolStripButton4;
+        private ToolStripSplitButton toolStripButton4;
+        private ToolStripMenuItem eToolStripMenuItem;
+        private ToolStripMenuItem eToolStripMenuItem1;
+        private ToolStripMenuItem eToolStripMenuItem2;
     }
 }
