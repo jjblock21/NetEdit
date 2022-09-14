@@ -24,7 +24,7 @@ namespace NetEdit
             //This was needed to update theme files.
             themes.items["dark"].ctrl_hover_textColor = Color.WhiteSmoke;
 
-            themes.items["dark"].menu_backColor = Color.FromArgb(32, 32, 32);
+            themes.items["dark"].menu_backColor = Color.FromArgb(20, 20, 20);
             themes.items["dark"].menu_button_backColor = Color.FromArgb(32, 32, 32);
             themes.items["dark"].menu_disabled_backColor = Color.FromArgb(32, 32, 32);
             themes.items["dark"].menu_imageMargin = Color.FromArgb(32, 32, 32);

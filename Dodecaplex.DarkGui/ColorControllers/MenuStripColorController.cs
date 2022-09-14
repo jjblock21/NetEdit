@@ -33,11 +33,11 @@ namespace Dodecaplex.DarkGui.ColorControllers
                 _menuStrip.RenderMode = ToolStripRenderMode.ManagerRenderMode;
             }
             _menuStrip.BackColor = _lastScheme.menu_backColor;
-            UpdateItemsRecursive(_menuStrip.Items);
+            UpdateItemsRecursive(_menuStrip.Items, false);
         }
 
         //Update non renderer defined colors of ToolStripItems and their children recursively.
-        private void UpdateItemsRecursive(ToolStripItemCollection items)
+        private void UpdateItemsRecursive(ToolStripItemCollection items, bool isDropdownItem)
         {
             foreach (ToolStripMenuItem i in items.OfType<ToolStripMenuItem>())
             {
@@ -46,9 +46,11 @@ namespace Dodecaplex.DarkGui.ColorControllers
                 {
                     i.DropDown.BackColor = _lastScheme.menu_dropdown_backColor;
                     //Update dropdown items later.
-                    if (i.HasDropDownItems) UpdateItemsRecursive(i.DropDownItems);
+                    if (i.HasDropDownItems) UpdateItemsRecursive(i.DropDownItems, true);
                 }
-                i.BackColor = _lastScheme.menu_button_backColor;
+                // Use different back color if menu item is no in dropdown
+                if (isDropdownItem) i.BackColor = _lastScheme.menu_button_backColor;
+                else i.BackColor = _lastScheme.menu_backColor;
                 i.ForeColor = _lastScheme.menu_textColor;
             }
         }
