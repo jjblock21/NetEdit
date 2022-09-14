@@ -58,8 +58,8 @@ namespace NetEdit
             themes.items["light"].tools_borderColor = SystemColors.Control;
             themes.items["light"].tools_textColor = SystemColors.ControlText;
 
-            Console.WriteLine(JsonConvert.SerializeObject(themes.items["dark"]));
-            Console.WriteLine(JsonConvert.SerializeObject(themes.items["light"]));
+            Console.WriteLine(JsonConvert.SerializeObject(themes.items["dark"], Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(themes.items["light"], Formatting.Indented));
 
             /*foreach (KeyValuePair<string, ColorScheme> s in themes.items)
                 Console.WriteLine(s);*/ //Debug code
