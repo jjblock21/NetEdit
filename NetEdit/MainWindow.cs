@@ -8,7 +8,7 @@ using System.Reflection;
 
 namespace NetEdit
 {
-    public partial class Editor : Form
+    public partial class MainWindow : Form
     {
         private Themes themes;
         private MenuStripController? mainMenu;
@@ -16,7 +16,7 @@ namespace NetEdit
         private MenuStripColorController? mainMenuColorController;
         private ToolStripColorController? toolStripColorController;
 
-        public Editor()
+        public MainWindow()
         {
             themes = new Themes(Program.ExecutingFolder + @"\themes");
             themes.ScanFolder();

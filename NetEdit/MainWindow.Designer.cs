@@ -1,6 +1,6 @@
 ﻿namespace NetEdit
 {
-    partial class Editor
+    partial class MainWindow
     {
         /// <summary>
         ///  Required designer variable.

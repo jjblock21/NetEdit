@@ -15,7 +15,7 @@ namespace NetEdit
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.ThreadException += ThreadException;
-            Application.Run(new Editor());
+            Application.Run(new MainWindow());
         }
 
         private static void ThreadException(object sender, ThreadExceptionEventArgs e)
