@@ -158,7 +158,7 @@
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
+            this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.S)));
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.saveAsToolStripMenuItem.Text = "Save as";
@@ -231,7 +231,7 @@
             // searchAndReplaceToolStripMenuItem
             // 
             this.searchAndReplaceToolStripMenuItem.Name = "searchAndReplaceToolStripMenuItem";
-            this.searchAndReplaceToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
+            this.searchAndReplaceToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.F)));
             this.searchAndReplaceToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
             this.searchAndReplaceToolStripMenuItem.Text = "Search and replace";
@@ -252,7 +252,7 @@
             this.mainToolStrip.TabIndex = 4;
             this.mainToolStrip.Text = "toolStrip";
             // 
-            // Editor
+            // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -263,7 +263,7 @@
             this.Controls.Add(this.outlinedButton1);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
-            this.Name = "Editor";
+            this.Name = "MainWindow";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Editor_Load);
             this.menuStrip.ResumeLayout(false);
