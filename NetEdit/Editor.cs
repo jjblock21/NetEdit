@@ -22,6 +22,7 @@ namespace NetEdit
             themes.ScanFolder();
 
             //This was needed to update theme files.
+            /*
             themes.items["dark"].ctrl_hover_textColor = Color.WhiteSmoke;
 
             themes.items["dark"].menu_backColor = Color.FromArgb(20, 20, 20);
@@ -59,7 +60,7 @@ namespace NetEdit
             themes.items["light"].tools_textColor = SystemColors.ControlText;
 
             Console.WriteLine(JsonConvert.SerializeObject(themes.items["dark"], Formatting.Indented));
-            Console.WriteLine(JsonConvert.SerializeObject(themes.items["light"], Formatting.Indented));
+            Console.WriteLine(JsonConvert.SerializeObject(themes.items["light"], Formatting.Indented));*/
 
             /*foreach (KeyValuePair<string, ColorScheme> s in themes.items)
                 Console.WriteLine(s);*/ //Debug code
